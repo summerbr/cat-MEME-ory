@@ -1,4 +1,4 @@
-require ('dotenv').config() //hide API key?
+require ('dotenv').config() 
 
 async function getCats() {
   let url = `https://api.thecatapi.com/v1/images/search?limit=8&api_key=${process.env.REACT_APP_GOOGLE_API_KEY}`
@@ -9,8 +9,8 @@ async function getCats() {
     return item.url
   })
   return imageURLs
+  // console.log(imageURLs)
 }
-// getCats().then(cats => console.log(cats))
 
 function shuffle(arr) {
   const deck = [...arr]
@@ -28,11 +28,11 @@ export default async function initializeDeck() {
   const cards = await getCats()
     .then(cats => cats.reduce((acc, type) => {
       acc.push({
-        // id: id++,
+        id: id++,
         type
       })
       acc.push({
-        // id: id++,
+        id: id++,
         type
       })
       return acc

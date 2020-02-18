@@ -33,4 +33,9 @@
 
 .board {
   background-color: pink;
+  padding: 0;
+}
+
+.board body {
+  width: 100%;
 }

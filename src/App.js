@@ -12,6 +12,10 @@ export default function App() {
     setCards(initializeDeck())
   }, []) //will only be called once
 
+  useEffect(() => {
+    preloadImages()
+  }, cards)
+
   const handleClick = (id) => {
     setDisabled(true)
     if (flipped.length === 0) {
@@ -34,6 +38,13 @@ export default function App() {
     const clickedCard = cards.find((card) => card.id === id)
     const flippedCard = cards.find((card) => flipped[0] === card.id)
     return flippedCard.type === clickedCard.type
+  }
+
+  const preloadImages = () => {
+    cards.map((card) => {
+      const src = `/img/${card.type}.png`
+      new Image().src = src
+    })
   }
 
   const resetGame = () => {
