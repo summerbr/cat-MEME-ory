@@ -1,0 +1,36 @@
+.flip-container {
+  Perspective: 1000px;
+  Display: inline-block;
+  Border: 1px solid white;
+  Background: black;
+}
+  
+.flip-container.flipped .flipper {
+  Transform: rotateY(180deg);
+}
+  
+.flipper {
+  Transition: 0.6s;
+  Transform-style: preserve-3d;
+  Position: relative;
+}
+  
+.front, .back {
+  Backface-visibility: hidden;
+  Position: absolute;
+  Left: 0;
+  Top: 0;
+}
+  
+.back {
+  Z-index: 2;
+  Transform: rotateY(0deg);
+}
+  
+.front {
+  Transform: rotateY(180deg);
+}
+
+.board {
+  background-color: pink;
+}
