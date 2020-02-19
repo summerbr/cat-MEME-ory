@@ -2,8 +2,7 @@ import React from 'react'
 import './style.css';
 import Card from './card'
 
-export default function Board(
-  {disabled, cards, flipped, matched, handleClick}) {
+export default function Board(props) {
     return (
       <div className="board">
         {cards.map((card) => (
