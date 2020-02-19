@@ -10,9 +10,7 @@ export default function Board({ cards, flipped, matched, handleClick, disabled }
           <Card 
             key={uuidv4()}
             id={card.id}
-            type={card.type} //which kitty
-            // back={card.back}
-            // front={card.front}
+            type={card.type} //kitty faceCard
             width={175}
             height={175}
             flipped={flipped.includes(card.id)}

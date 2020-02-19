@@ -12,7 +12,7 @@ export default function Card({ id, type, flipped, handleClick,
         <img 
         style={{ height, width }} 
         className={flipped ? "front" : "back"}
-        src={flipped || matched ? `${type}` : "back"} />
+        src={flipped || matched ? `${type}` : null } />
       </div>
     </div>
   )

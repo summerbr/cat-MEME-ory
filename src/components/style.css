@@ -61,10 +61,10 @@ h1 {
   justify-content: center;
 }
   
-.card {
+/* .card {
   height: 175px;
   width: 125px;
-}
+} */
 
 /* first click img reversed correct when matched*/
 .card .flipped .flipper {
@@ -80,8 +80,8 @@ h1 {
 .card .front, .back {
   backface-visibility: hidden;
   position: absolute;
-  left: 0;
-  top: 0;
+  display: flex;
+  align-items: center;
 }
   
 .back {
