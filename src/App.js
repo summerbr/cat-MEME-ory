@@ -42,6 +42,7 @@ function App() {
     return flippedCard.type === clickedCard.type
   }
 
+  //not working
   const resetGame = () => {
     setFlipped([]) //reset to empty array
     setDisabled(false) //reset clicks

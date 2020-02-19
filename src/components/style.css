@@ -52,21 +52,27 @@ h1 {
 }
 
 .card-container {
-  /* display: inline-block; */
-  /* border: 1px solid white; */
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-gap: 15px;
   margin: 50px;
   justify-content: center;
+  perspective: 500px;
 }
   
-/* .card {
+.card {
+  border-radius: 3px;
+  border-style: groove;
   height: 175px;
-  width: 125px;
-} */
+  width: 175px;
+  transition: all .2s ease-in-out;
+}
 
-/* first click img reversed correct when matched*/
+.card:hover {
+  transform: scale(1.1);
+}
+
+
 .card .flipped .flipper {
   transform: rotateY(180deg);
 }
@@ -78,12 +84,20 @@ h1 {
 }
   
 .card .front, .back {
+  /* border-radius: 4px;
+  border-style: outset; */
+  height: 175px;
+  width: 175px;
   backface-visibility: hidden;
   position: absolute;
   display: flex;
   align-items: center;
 }
-  
+
+.front {
+  transform: rotateY(0deg);
+}
+
 .back {
   background: url(./images/—Pngtree-illustration-cat-cat-unicorn_3930649.png), 
   rgb(0, 81, 255);
@@ -91,7 +105,7 @@ h1 {
   z-index: 2;
   transform: rotateY(0deg);
 }
-  
-.front {
-  transform: rotateY(0deg);
+
+.back:hover {
+  transform: translateY(0)
 }

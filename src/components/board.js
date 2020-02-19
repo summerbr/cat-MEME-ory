@@ -11,8 +11,6 @@ export default function Board({ cards, flipped, matched, handleClick, disabled }
             key={uuidv4()}
             id={card.id}
             type={card.type} //kitty faceCard
-            width={175}
-            height={175}
             flipped={flipped.includes(card.id)}
             matched={matched.includes(card.id)}
             handleClick={handleClick}
