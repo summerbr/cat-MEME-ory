@@ -5,7 +5,7 @@ const uuidv4 = require('uuid/v4')
 
 export default function Board({ cards, flipped, matched, handleClick, disabled }) {
     return (
-      <div className="board">
+      <div className="card-container">
         {cards.map((card) => (
           <Card 
             key={uuidv4()}

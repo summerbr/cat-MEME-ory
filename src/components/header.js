@@ -6,10 +6,10 @@ export default function header() {
     <h1>CAT MEME-ORY</h1>
     <div className="game-header">
       <div>
-        <span>TIME</span>
+        {/* <span>TIME</span> */}
       </div>
     <div>
-      <span>FLIPS</span>
+      {/* <span>FLIPS</span> */}
     </div>
     </div>
   </>
