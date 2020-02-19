@@ -49,7 +49,7 @@ function App() {
 
   return (
     <>
-    <h1>Cat MEME-ory</h1>
+    <h1>CAT MEME-ORY</h1>
       <Board 
         cards={cards}
         flipped={flipped}

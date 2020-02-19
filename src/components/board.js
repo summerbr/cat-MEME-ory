@@ -13,8 +13,8 @@ export default function Board({ cards, flipped, matched, handleClick, disabled }
             type={card.type} //which kitty
             // back={card.back}
             // front={card.front}
-            width={250}
-            height={250}
+            width={175}
+            height={175}
             flipped={flipped.includes(card.id)}
             matched={matched.includes(card.id)}
             handleClick={handleClick}
