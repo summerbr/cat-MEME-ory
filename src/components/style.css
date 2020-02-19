@@ -1,8 +1,8 @@
 .flip-container {
-  Perspective: 1000px;
+  /* Perspective: 1000px; */
   Display: inline-block;
   Border: 1px solid white;
-  Background: black;
+  /* Background: black; */
 }
   
 .flip-container.flipped .flipper {
@@ -23,6 +23,7 @@
 }
   
 .back {
+  background-color: blueviolet;
   Z-index: 2;
   Transform: rotateY(0deg);
 }
