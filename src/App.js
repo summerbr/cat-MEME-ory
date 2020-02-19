@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import './components/style.css';
+import Header from './components/header'
 import initializeDeck from './deck'
 import Board from './components/board';
 
 function App() {
   const [cards, setCards] = useState([]) 
-  //id:1 instead of reduce?
   const [flipped, setFlipped] = useState([]) 
   const [matched, setMatched] = useState([])
   const [disabled, setDisabled] = useState(false)
@@ -49,7 +49,7 @@ function App() {
 
   return (
     <>
-    <h1>CAT MEME-ORY</h1>
+    <Header />
       <Board 
         cards={cards}
         flipped={flipped}

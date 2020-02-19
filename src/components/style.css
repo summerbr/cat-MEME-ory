@@ -1,5 +1,6 @@
-/* @font-face kit by Fonts2u (https://fonts2u.com) */ 
+
 @font-face {
+  /* @font-face kit by Fonts2u (https://fonts2u.com) */ 
   font-family: "LMS Cat Treats"; 
   src: url("./fonts/LMS_CAT.eot") format("eot"), 
   url("./fonts/LMS_CAT.woff") format("woff"), 
@@ -9,8 +10,33 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Kittyface"; 
+  src: url("./fonts/Kittyface.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "catcrypt"; 
+  src: url("./fonts/catcrypt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 h1 {
-  font-family: "LMS Cat Treats";
+  font-family: Kittyface, serif;
+  color: blue;
+  font-size: 7em;
+  font-weight: normal;
+  text-align: center;
+}
+
+.game-header {
+  font-family: LMS Cat Treats, serif;
+  font-size: 4em;
+  font-weight: normal;
+  text-align: center;
 }
 
 .card-container {
@@ -38,7 +64,7 @@ h1 {
 }
   
 .back {
-  background-color: blueviolet;
+  background-color: rgb(0, 81, 255);
   Z-index: 2;
   Transform: rotateY(0deg);
 }
