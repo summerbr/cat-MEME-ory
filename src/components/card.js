@@ -7,7 +7,7 @@ export default function Card({ id, type, flipped, handleClick,
     <div className={`card ${flipped ? 'flipped' : ''}`}  
       onClick={() => handleClick(id)}>
 
-      <div className="flipper"> {/*flipper*/}
+      <div className="flipper">
         <img 
         className={flipped ? "front" : "back"}
         src={flipped || matched ? `${type}` : null } />

@@ -3,7 +3,7 @@ import './style.css';
 import Card from './card'
 const uuidv4 = require('uuid/v4')
 
-export default function Board({ cards, flipped, matched, handleClick, disabled }) {
+export default function Board({ cards, flipped, matched, handleClick, disabled}) {
     return (
       <div className="card-container">
         {cards.map((card) => (
@@ -16,7 +16,7 @@ export default function Board({ cards, flipped, matched, handleClick, disabled }
             handleClick={handleClick}
             disabled={disabled || matched.includes(card.id)}
             />
-      ))}
-    </div>
-  )
+      ))} 
+      </div>
+    )
 }

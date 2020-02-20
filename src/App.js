@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import './components/style.css';
+import React, { useState, useEffect } from 'react-redux'
+import {connect} from 'react'
 import Header from './components/header'
 import initializeDeck from './deck'
 import Board from './components/board';
@@ -9,27 +9,34 @@ function App() {
   const [flipped, setFlipped] = useState([]) 
   const [matched, setMatched] = useState([])
   const [disabled, setDisabled] = useState(false)
+  const [countdown, setCountdown] = useState(100)
+  const [flips, setFlips] = useState(0)
 
   useEffect(() => {
     setCards(initializeDeck())
   }, []) //empty array will only call once
 
+  // useEffect(() => {
+  //   setTimeout(() => {
+
+  //   })
+  // })
+
   const handleClick = (id) => {
-    // this.shuffleCards();
-    // this.handleFlips(id);
-    // console.log(this.state.flipCount)
     setDisabled(true)
     if (flipped.length === 0) {
       setFlipped([id])
       setDisabled(true)
     } else {
       if (checkMatch(id)) return
-        setFlipped([flipped[0], id])
-      if (isMatch(id)) {
+        setFlipped([flipped[0], id]) //creates flipped array
+        // setFlips(...flips, +1)
+      if (isMatch(id)) { //or time runs out ?
         setMatched([...matched, flipped[0], id])
-        resetGame()
+        resetCards()
       } else {
-        setTimeout(resetGame, 2000)
+        console.log('else triggered')
+        setTimeout(resetCards, 2000)
       }
     }
   }
@@ -42,15 +49,23 @@ function App() {
     return flippedCard.type === clickedCard.type
   }
 
-  //not working
-  const resetGame = () => {
+  const resetCards = () => {
     setFlipped([]) //reset to empty array
     setDisabled(false) //reset clicks
   }
 
+  const resetGame = () => {
+    setFlipped([])
+    setMatched([])
+    setDisabled(false)
+  }
+
   return (
     <>
-    <Header />
+      <Header 
+      countdown={countdown}
+      flips={flips}
+      />
       <Board 
         cards={cards}
         flipped={flipped}
@@ -58,6 +73,20 @@ function App() {
         matched={matched}
         disabled={disabled}
       />
+      <button 
+        style={{   
+          padding: '0',
+          backgroundColor: 'blue',
+          color: 'white',
+          borderStyle: 'groove',
+          borderRadius: '12px',
+          fontSize: '1em',
+          height: '50px',
+          display: 'block',
+          margin: 'auto',
+          minWidth: '150px' 
+        }}
+        onClick={resetGame}>RESET</button>
     </>
   )
 };

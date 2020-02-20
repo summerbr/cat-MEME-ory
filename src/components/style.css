@@ -1,4 +1,4 @@
-
+/* <a href='https://pngtree.com/so/cat'>cat png from pngtree.com</a> */
 @font-face {
   /* @font-face kit by Fonts2u (https://fonts2u.com) */ 
   font-family: "LMS Cat Treats"; 
@@ -26,15 +26,15 @@
 
 html {
   /* box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.5); */
-  background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
-  url(./images/—Pngtree—cute\ ginger\ cat\ head_5304599.png);
-  background-size: 100px;
-  background-repeat: repeat;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url(./images/—Pngtree—cute_adorable_cat_vector_pattern_3691386.png);
+  cursor: url(cursors/cat-gf-\(526\).cur), auto;
 }
 
 h1 {
   font-family: Kittyface, serif;
-  color: blue;
+  color: white;
+  text-shadow: 4px 6px blue;
   font-size: 7em;
   font-weight: normal;
   text-align: center;
@@ -43,13 +43,27 @@ h1 {
 .game-header {
   /* grid-column: 1/ -1; span entirety of column*/
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   font-family: LMS Cat Treats, serif;
   color: white;
   font-size: 4em;
   font-weight: normal;
   text-align: center;
 }
+
+/* NOTE: app.js not importing css?? */
+/* .button {
+      padding: 0;
+      background-color: blue;
+      color: white;
+      border-style: groove;
+      border-radius: 12px;
+      fontSize: 1em;
+      height: 50px;
+      display: block;
+      margin: auto;
+      minWidth: 150px;
+}  */
 
 .card-container {
   display: grid;
@@ -72,7 +86,6 @@ h1 {
   transform: scale(1.1);
 }
 
-
 .card .flipped .flipper {
   transform: rotateY(180deg);
 }
@@ -84,8 +97,6 @@ h1 {
 }
   
 .card .front, .back {
-  /* border-radius: 4px;
-  border-style: outset; */
   height: 175px;
   width: 175px;
   backface-visibility: hidden;
@@ -100,7 +111,9 @@ h1 {
 
 .back {
   background: url(./images/—Pngtree-illustration-cat-cat-unicorn_3930649.png), 
-  rgb(0, 81, 255);
+  radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(65,120,251,1) 32%,
+   rgba(61,102,213,1) 44%, rgba(66,132,251,1) 58%, rgba(66,130,251,1) 61%,
+   rgba(66,135,251,1) 63%, rgba(70,73,252,1) 86%);;
   background-size: contain;
   z-index: 2;
   transform: rotateY(0deg);
@@ -108,4 +121,15 @@ h1 {
 
 .back:hover {
   transform: translateY(0)
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .game-header {
+    flex-direction: column;
+    align-items: center;
+  }
 }
