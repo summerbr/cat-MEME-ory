@@ -1,17 +1,30 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-export default function header({ countdown, flips }) {
+function header(props) {
   return (
   <>
-    <h1>CAT MEME-ORY</h1>
-    <div className="game-header">
-      <div>
-        <span>TIME: {countdown}</span>
+    <div className="header">
+      <h1>CAT MEME-ORY</h1>
+        <div className="header-info">
+        <div>
+          <span>TIME: {props.seconds}</span>
+        </div>
+         <div>
+          <span>FLIPS: {props.flips}</span>
+        </div>
       </div>
-    <div>
-      <span>FLIPS: {flips}</span>
-    </div>
     </div>
   </>
   )
 }
+
+//displays
+const mapStateToProps = (state) => {
+  return {
+    seconds: state.seconds,
+    flips: state.flips
+  }
+}
+
+export default connect(mapStateToProps)(header)

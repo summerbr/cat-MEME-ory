@@ -48,5 +48,4 @@ export default function initializeDeck() {
       return acc
     }, []);
   return shuffle(cards)
-  // console.log(shuffle(cards))
 }
