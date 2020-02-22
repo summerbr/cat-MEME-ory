@@ -1,5 +1,5 @@
 const initialState = {
-  countdown: 100,  //start
+  countdown: 60,  
   flips: 0
 };
 
@@ -10,10 +10,14 @@ const reducer = (state = initialState, action) => {
       countdown: state.countdown - 1
       }
     }
-  else if (action.type === 'COUNT_FLIPS') {
+  if (action.type === 'COUNT_FLIPS') {
     return {
       ...state,
-      flips: state.flips + 1 //increment by 2 / 1 per card?
+      flips: state.flips + 1 
+    }
+  } else if (action.type === 'RESET') {
+    return {
+      initialState
     }
   }
   return state

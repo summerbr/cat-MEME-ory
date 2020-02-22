@@ -30,30 +30,32 @@ html {
   cursor: url(cursors/cat-gf-\(526\).cur), auto;
 }
 
+.header {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-weight: normal;
+  border: 2px outset white;
+  border-radius: 12px;
+}
+
 h1 {
   font-family: Kittyface, serif;
-  color: white;
   text-shadow: 4px 6px #8e1252; /*8e1252*/
   font-size: 7em;
-  font-weight: normal;
   text-align: center;
 }
 
-.game-header {
-  /* grid-column: 1/ -1; span entirety of column*/
+.header-info {
   display: flex;
   justify-content: space-evenly;
   font-family: LMS Cat Treats, serif;
-  color: white;
-  font-size: 4em;
-  font-weight: normal;
+  font-size: 5em;
   text-align: center;
 }
 
 button {
   font-family: LMS Cat Treats, serif; 
   font-weight: bold;
-  padding: 0;
   background-color: #8e1252;
   color: white;
   border-style: groove;
@@ -62,7 +64,7 @@ button {
   height: 50px;
   display: block;
   margin: auto;
-  min-width: 150px;
+  min-width: 200px;
   box-shadow: 2px 3px 4px white;
 }  
 
@@ -129,8 +131,9 @@ button {
     grid-template-columns: repeat(2, auto);
   }
 
-  .game-header {
+  .header-info {
     flex-direction: column;
     align-items: center;
+    font-size: 3em;
   }
 }

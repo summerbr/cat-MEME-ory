@@ -1,41 +1,52 @@
 import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
 import Header from './components/header'
 import initializeDeck from './deck'
 import Board from './components/board';
 import './components/style.css'
-
-import { connect } from 'react-redux'
 
 function App(props) {
   const [cards, setCards] = useState([]) 
   const [flipped, setFlipped] = useState([]) 
   const [matched, setMatched] = useState([])
   const [disabled, setDisabled] = useState(false)
-  const [intervalId, setCatInterval] = useState(0)
-
 
   useEffect(() => {
     setCards(initializeDeck())
   }, []) //empty array will only call once
 
-  const handleClick = (id) => {
-    //reassign global state to local to prevent re-render
-    let ctr = props.countdown
+  //Timer
+  const [seconds, setSeconds] = useState(0)
 
-    if(intervalId == 0) {
+  // useEffect(() => {
+  //   let interval = null;
+  //   if (isActive) {
+  //     interval = setInterval(() => {
+  //       setTimeLeft(timeLeft => timeLeft - 1);
+  //     }, 1000);
+  //   } else if(!isActive && timeLeft !== 0) {
+  //     clearInterval(interval);
+  //   }
+  //   return () => clearInterval(interval)
+  // }, [isActive, timeLeft])
+
+  const handleClick = (id) => {
+    //start countdown
+    let timer = props.countdown
+    if(seconds == 0) {
       let timerId  =  window.setInterval(() => {
         props.startCountdown()
-        ctr -= 1 
+        timer -= 1 
         console.log(timerId)
-        if(ctr == 0) {
+        if(timer == 0) {
           //stop timer once it reaches 0
           window.clearInterval(timerId)
         }
       }, 1000)
-      setCatInterval(timerId)
+      setSeconds(timerId)
     }
-
-    setDisabled(true)
+    
+    setDisabled(true) 
     if (flipped.length === 0) {
       setFlipped([id])
       setDisabled(true)
@@ -70,6 +81,8 @@ function App(props) {
     setFlipped([])
     setMatched([])
     setDisabled(false)
+    //reset flips
+    //reset timer
   }
 
   return (
@@ -92,6 +105,7 @@ function App(props) {
     return {
       startCountdown: () => dispatch({ type: 'TIME_DECREMENT' }),
       totalFlips: () => dispatch({ type: 'COUNT_FLIPS' })
+
     }
   }
 
