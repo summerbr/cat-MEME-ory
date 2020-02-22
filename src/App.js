@@ -15,35 +15,22 @@ function App(props) {
     setCards(initializeDeck())
   }, []) //empty array will only call once
 
-  //Timer
-  const [seconds, setSeconds] = useState(0)
-
-  // useEffect(() => {
-  //   let interval = null;
-  //   if (isActive) {
-  //     interval = setInterval(() => {
-  //       setTimeLeft(timeLeft => timeLeft - 1);
-  //     }, 1000);
-  //   } else if(!isActive && timeLeft !== 0) {
-  //     clearInterval(interval);
-  //   }
-  //   return () => clearInterval(interval)
-  // }, [isActive, timeLeft])
+  const [intervalId, setCatInterval] = useState(0)
 
   const handleClick = (id) => {
     //start countdown
-    let timer = props.countdown
-    if(seconds == 0) {
+    let timer = props.seconds
+    if(intervalId == 0) {
       let timerId  =  window.setInterval(() => {
         props.startCountdown()
         timer -= 1 
-        console.log(timerId)
+
         if(timer == 0) {
           //stop timer once it reaches 0
           window.clearInterval(timerId)
         }
       }, 1000)
-      setSeconds(timerId)
+      setCatInterval(timerId)
     }
     
     setDisabled(true) 
@@ -53,7 +40,6 @@ function App(props) {
     } else {
       if (checkMatch(id)) return
         setFlipped([flipped[0], id]) //creates flipped array
-        // setFlips(...flips, +1)
       if (isMatch(id)) { //or time runs out ?
         setMatched([...matched, flipped[0], id])
         resetCards()
@@ -73,7 +59,7 @@ function App(props) {
   }
 
   const resetCards = () => {
-    setFlipped([]) //reset to empty array
+    setFlipped([]) //reset to empty array if no match
     setDisabled(false) //reset clicks
   }
 
@@ -81,8 +67,8 @@ function App(props) {
     setFlipped([])
     setMatched([])
     setDisabled(false)
-    //reset flips
-    //reset timer
+    props.resetAll() //reset flips
+    window.clearInterval(intervalId)//reset timer
   }
 
   return (
@@ -104,15 +90,15 @@ function App(props) {
   const mapDispatchToProps = (dispatch) => {
     return {
       startCountdown: () => dispatch({ type: 'TIME_DECREMENT' }),
-      totalFlips: () => dispatch({ type: 'COUNT_FLIPS' })
-
+      totalFlips: () => dispatch({ type: 'COUNT_FLIPS' }),
+      resetAll: () => dispatch({ type: 'RESET_ALL' })
     }
   }
 
   //displays
   const mapStateToProps = (state) => {
     return {
-      countdown: state.countdown,
+      seconds: state.seconds,
       flips: state.flips
     }
   }

@@ -8,7 +8,7 @@ function header(props) {
       <h1>CAT MEME-ORY</h1>
         <div className="header-info">
         <div>
-          <span>TIME: {props.countdown}</span>
+          <span>TIME: {props.seconds}</span>
         </div>
          <div>
           <span>FLIPS: {props.flips}</span>
@@ -22,7 +22,7 @@ function header(props) {
 //displays
 const mapStateToProps = (state) => {
   return {
-    countdown: state.countdown,
+    seconds: state.seconds,
     flips: state.flips
   }
 }

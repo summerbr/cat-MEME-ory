@@ -1,24 +1,26 @@
 const initialState = {
-  countdown: 60,  
+  seconds: 60,  
   flips: 0
 };
 
 const reducer = (state = initialState, action) => {
-  if (action.type === 'TIME_DECREMENT') {
-    return {
-      ...state,
-      countdown: state.countdown - 1
+  switch (action.type) {
+    case 'TIME_DECREMENT':
+      return {
+        ...state,
+        seconds: state.seconds - 1
+        }
+    case 'COUNT_FLIPS':
+      return {
+        ...state,
+        flips: state.flips + 1 
       }
-    }
-  if (action.type === 'COUNT_FLIPS') {
-    return {
-      ...state,
-      flips: state.flips + 1 
-    }
-  } else if (action.type === 'RESET') {
-    return {
-      initialState
-    }
+    case 'RESET_ALL':
+      return {
+        ...state,
+        seconds: initialState.seconds,
+        flips: initialState.flips
+      }
   }
   return state
 }
