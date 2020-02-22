@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/cat-MEME-ory/static/css/main.94616e2d.chunk.css",
+    "main.js": "/cat-MEME-ory/static/js/main.c2bcea91.chunk.js",
+    "main.js.map": "/cat-MEME-ory/static/js/main.c2bcea91.chunk.js.map",
+    "runtime-main.js": "/cat-MEME-ory/static/js/runtime-main.cc7adc91.js",
+    "runtime-main.js.map": "/cat-MEME-ory/static/js/runtime-main.cc7adc91.js.map",
+    "static/js/2.d8861b4c.chunk.js": "/cat-MEME-ory/static/js/2.d8861b4c.chunk.js",
+    "static/js/2.d8861b4c.chunk.js.map": "/cat-MEME-ory/static/js/2.d8861b4c.chunk.js.map",
+    "index.html": "/cat-MEME-ory/index.html",
+    "precache-manifest.5b89bd377b2fb905de424d43f649da9c.js": "/cat-MEME-ory/precache-manifest.5b89bd377b2fb905de424d43f649da9c.js",
+    "service-worker.js": "/cat-MEME-ory/service-worker.js",
+    "static/css/main.94616e2d.chunk.css.map": "/cat-MEME-ory/static/css/main.94616e2d.chunk.css.map",
+    "static/js/2.d8861b4c.chunk.js.LICENSE.txt": "/cat-MEME-ory/static/js/2.d8861b4c.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/cat-MEME-ory/static/media/—Pngtree—cute_adorable_cat_vector_pattern_3691386.6ca4eaaf.png",
+    "static/media/coffee.jpg": "/cat-MEME-ory/static/media/coffee.162561b8.jpg",
+    "static/media/grumpy-cat-bird.jpeg": "/cat-MEME-ory/static/media/grumpy-cat-bird.ce5b0b99.jpeg",
+    "static/media/haters.jpg": "/cat-MEME-ory/static/media/haters.d1c96ac9.jpg",
+    "static/media/meow.jpeg": "/cat-MEME-ory/static/media/meow.78f6eb67.jpeg",
+    "static/media/nike.jpeg": "/cat-MEME-ory/static/media/nike.eaf8afe0.jpeg",
+    "static/media/testes.jpeg": "/cat-MEME-ory/static/media/testes.703f5058.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cc7adc91.js",
+    "static/js/2.d8861b4c.chunk.js",
+    "static/css/main.94616e2d.chunk.css",
+    "static/js/main.c2bcea91.chunk.js"
+  ]
+}
