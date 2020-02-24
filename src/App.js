@@ -13,7 +13,11 @@ function App(props) {
 
   useEffect(() => {
     setCards(initializeDeck())
-  }, []) //empty array will only call once
+  }, []); //empty array will only call once
+
+  useEffect(() => {
+    document.title = "Cat MEME-ORY"
+  }, []);
 
   const [intervalId, setCatInterval] = useState(0)
 
